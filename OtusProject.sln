@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Otus.DbConsole", "OtusDbConsole\Otus.DbConsole.csproj", "{5B580DE9-2FFE-4B5E-AB49-86D602C35E97}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1", "1", "{37FDEB4D-AA5F-4B4F-9BF1-4B8905EF0608}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Otus.Infrastructure", "Otus.Infrastructure\Otus.Infrastructure.csproj", "{5C84D20E-38C8-4EC4-90A1-0938FF82FB57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B580DE9-2FFE-4B5E-AB49-86D602C35E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B580DE9-2FFE-4B5E-AB49-86D602C35E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B580DE9-2FFE-4B5E-AB49-86D602C35E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B580DE9-2FFE-4B5E-AB49-86D602C35E97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C84D20E-38C8-4EC4-90A1-0938FF82FB57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C84D20E-38C8-4EC4-90A1-0938FF82FB57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C84D20E-38C8-4EC4-90A1-0938FF82FB57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C84D20E-38C8-4EC4-90A1-0938FF82FB57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5B580DE9-2FFE-4B5E-AB49-86D602C35E97} = {37FDEB4D-AA5F-4B4F-9BF1-4B8905EF0608}
+		{5C84D20E-38C8-4EC4-90A1-0938FF82FB57} = {37FDEB4D-AA5F-4B4F-9BF1-4B8905EF0608}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CE5065B-79BD-4A68-8818-991220477188}
+	EndGlobalSection
+EndGlobal

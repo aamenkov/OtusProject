@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "OtusDbConsole": {
+      "commandName": "Project",
+      "commandLineArgs": "--table q"
+    }
+  }
+}
