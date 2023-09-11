@@ -6,8 +6,11 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Otus.DbConsole", "OtusDbConsole\Otus.DbConsole.csproj", "{5B580DE9-2FFE-4B5E-AB49-86D602C35E97}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1", "1", "{37FDEB4D-AA5F-4B4F-9BF1-4B8905EF0608}"
+	ProjectSection(SolutionItems) = preProject
+		Help.txt = Help.txt
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Otus.Infrastructure", "Otus.Infrastructure\Otus.Infrastructure.csproj", "{5C84D20E-38C8-4EC4-90A1-0938FF82FB57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Otus.DbConsole.Infrastructure", "Otus.Infrastructure\Otus.DbConsole.Infrastructure.csproj", "{5C84D20E-38C8-4EC4-90A1-0938FF82FB57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

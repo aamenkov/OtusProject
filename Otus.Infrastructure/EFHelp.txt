@@ -1,0 +1,4 @@
+﻿  Package manager console
+  
+  add-migration {MigrationName}
+  update-database

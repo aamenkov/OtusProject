@@ -1,13 +1,11 @@
-﻿using System.Data;
-
-namespace Otus.Infrastructure.Entities
+﻿namespace Otus.DbConsole.Infrastructure.Entities
 {
     /// <summary>
     /// Оценки ученика
     /// </summary>
     public class UserGrade
     {
-        public long Id { get; set; }
+        public long UserGradeId { get; set; }
 
         /// <summary>
         /// Оценка
@@ -17,14 +15,22 @@ namespace Otus.Infrastructure.Entities
         /// <summary>
         /// Комментарий 
         /// </summary>
-        public string Comment { get; set; }
+        public string? Comment { get; set; }
 
         /// <summary>
         /// Признак прохождения задания 
         /// </summary>
         public bool IsPassed { get; set; }
 
+        /// <summary>
+        /// Дата создания оценки
+        /// </summary>
+        public DateTime DateTimeCreated { get; set; }
+
+        public long HomeworkId { get; set; }
         public virtual Homework Homework { get; set; } = null!;
+
+        public Guid UserId { get; set; }
         public virtual User User { get; set; } = null!;
     }
 }

@@ -1,9 +1,10 @@
 ﻿using CommandLine;
 using Microsoft.Extensions.Configuration;
-using Otus.DbConsole;
+using Otus.DbConsole.Services;
 
 internal class Program
 {
+    private static ConfigService _configService;
     public class Options
     {
         [Option('t', "table", Required = true, HelpText = "The table name.")]
@@ -12,8 +13,14 @@ internal class Program
 
     public static void Main(string[] args)
     {
+        _configService = new ConfigService("Host=localhost;Port=5432;Database=OtusProject;Username=postgres;Password=postgres");
+        var initService = new InitService(_configService);
+
         // вывести все таблицы 
         // добавить возможность добавить в таблицу на выбор сущность 
+
+        // сделать заполнение таблиц 
+        // вывести строку подключения в переменные среды
         WriteHelpToConsole();
 
         while (true)
@@ -29,7 +36,7 @@ internal class Program
             }
 
             var arguments = new[] { arg };
-            ConfigService.Parser.ParseArguments<Options>(arguments).WithParsed(o =>
+            _configService.Parser.ParseArguments<Options>(arguments).WithParsed(o =>
             {
                 var table = o.TableType;
 
@@ -52,7 +59,7 @@ internal class Program
     public static void WriteHelpToConsole()
     {
         Console.WriteLine("Usage: -t --table <tabletype>");
-        Console.WriteLine("Possible values: " + ConfigService.GetTableNames());
+        Console.WriteLine("Table types: " + _configService.GetTableNames());
         Console.WriteLine("Exit = 0");
     }
 }

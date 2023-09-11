@@ -1,4 +1,4 @@
-﻿namespace Otus.Infrastructure.Entities
+﻿namespace Otus.DbConsole.Infrastructure.Entities
 {
     /// <summary>
     /// Домашнее задание для учеников
@@ -6,6 +6,7 @@
     public class Homework
     {
         public long Id { get; set; }
+
         /// <summary>
         /// Заголовок задания 
         /// </summary>
@@ -14,6 +15,8 @@
         /// <summary>
         /// Описание задания 
         /// </summary>
-        public string Description { get; set; }
+        public string? Description { get; set; }
+
+        public virtual ICollection<UserGrade> UserGrades { get; set; }
     }
 }

@@ -1,11 +1,18 @@
 ﻿using CommandLine;
 using System;
 
-namespace Otus.DbConsole
+namespace Otus.DbConsole.Services
 {
-    public static class ConfigService
+    public class ConfigService
     {
-        public static string GetTableNames()
+        public string _secretString { get; }
+
+        public ConfigService(string secretString)
+        {
+            _secretString = secretString;
+        }
+
+        public string GetTableNames()
         {
             string result = "";
 
@@ -17,7 +24,7 @@ namespace Otus.DbConsole
             return result.Remove(result.Length - 2, 2);
         }
 
-        public static Parser Parser = new Parser(settings =>
+        public Parser Parser = new Parser(settings =>
         {
             // Отключите генерацию справочной информации
             settings.AutoHelp = false;

@@ -1,11 +1,11 @@
-﻿namespace Otus.Infrastructure.Entities
+﻿namespace Otus.DbConsole.Infrastructure.Entities
 {
     /// <summary>
     /// Пользователи
     /// </summary>
     public class User
     {
-        public Guid Id { get; set; }
+        public Guid UserId { get; set; }
 
         /// <summary>
         /// Имя пользователя 
@@ -16,5 +16,7 @@
         /// Признак преподавателя
         /// </summary>
         public bool IsLecturer { get; set; }
+
+        public virtual ICollection<UserGrade> UserGrades { get; set; }
     }
 }
