@@ -1,17 +1,9 @@
 ﻿using CommandLine;
-using System;
 
-namespace Otus.DbConsole.Services
+namespace DbConsole.Common
 {
-    public class ConfigService
+    public class ConsoleService
     {
-        public string _secretString { get; }
-
-        public ConfigService(string secretString)
-        {
-            _secretString = secretString;
-        }
-
         public string GetTableNames()
         {
             string result = "";
@@ -38,5 +30,4 @@ namespace Otus.DbConsole.Services
             UserGrades = 3
         }
     }
-
 }

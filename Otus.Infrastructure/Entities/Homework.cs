@@ -1,4 +1,4 @@
-﻿namespace Otus.DbConsole.Infrastructure.Entities
+﻿namespace DbConsole.Infrastructure.Entities
 {
     /// <summary>
     /// Домашнее задание для учеников

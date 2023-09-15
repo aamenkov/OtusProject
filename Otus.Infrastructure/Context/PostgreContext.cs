@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Otus.DbConsole.Infrastructure.Entities;
+using DbConsole.Infrastructure.Entities;
+using System.Data.SqlClient;
 
-namespace Otus.DbConsole.Infrastructure.Context
+namespace DbConsole.Infrastructure.Context
 {
     public class PostgreContext : DbContext
     {
@@ -20,6 +21,8 @@ namespace Otus.DbConsole.Infrastructure.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+            builder.InitialCatalog = "Otus.DbConsole";
             optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=OtusProject;Username=postgres;Password=postgres");
         }
 

@@ -1,10 +1,12 @@
 ﻿using CommandLine;
+using DbConsole.Application.Services;
+using DbConsole.Common;
 using Microsoft.Extensions.Configuration;
-using Otus.DbConsole.Services;
 
 internal class Program
 {
     private static ConfigService _configService;
+    private static ConsoleService _consoleService = new ConsoleService();
     public class Options
     {
         [Option('t', "table", Required = true, HelpText = "The table name.")]
@@ -13,14 +15,33 @@ internal class Program
 
     public static void Main(string[] args)
     {
-        _configService = new ConfigService("Host=localhost;Port=5432;Database=OtusProject;Username=postgres;Password=postgres");
-        var initService = new InitService(_configService);
+        // Создаем конфигурацию
+        var configuration = new ConfigurationBuilder()
+                        .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                        .AddJsonFile("appsettings.json")
+                        .Build();
+
+        // Считываем строку подключения к базе данных
+        string connectionString = configuration.GetConnectionString("DefaultConnection");
+        if (connectionString == null) { 
+            Console.WriteLine("Check that u use correct connection string in appsettings.json");
+            Environment.Exit(0);
+        };
+
+        _configService = new ConfigService(connectionString);
+        var initService = new InitDbService(_configService);
 
         // вывести все таблицы 
-        // добавить возможность добавить в таблицу на выбор сущность 
+        // + сделать конвертацию моделей 
+        // сделать методы для вывода записей из таблиц 
+        // сделать методы для добавления записи в таблицу
 
-        // сделать заполнение таблиц 
-        // вывести строку подключения в переменные среды
+        // + сделать заполнение таблиц 
+        // + вывести строку подключения 
+
+        // как правильно переименовывать проекты чтобы ничего не испортить?
+        // в случае с гитом
+
         WriteHelpToConsole();
 
         while (true)
@@ -36,7 +57,7 @@ internal class Program
             }
 
             var arguments = new[] { arg };
-            _configService.Parser.ParseArguments<Options>(arguments).WithParsed(o =>
+            _consoleService.Parser.ParseArguments<Options>(arguments).WithParsed(o =>
             {
                 var table = o.TableType;
 
@@ -59,7 +80,7 @@ internal class Program
     public static void WriteHelpToConsole()
     {
         Console.WriteLine("Usage: -t --table <tabletype>");
-        Console.WriteLine("Table types: " + _configService.GetTableNames());
+        Console.WriteLine("Table types: " + _consoleService.GetTableNames());
         Console.WriteLine("Exit = 0");
     }
 }
