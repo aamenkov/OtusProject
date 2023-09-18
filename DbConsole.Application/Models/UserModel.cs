@@ -15,7 +15,7 @@ namespace DbConsole.Application.Models
         /// </summary>
         public bool IsLecturer { get; set; }
 
-        public UserModel ConvertToApplicationModel(DbConsole.Infrastructure.Entities.User user)
+        public static UserModel ConvertToApplicationModel(DbConsole.Infrastructure.Entities.User user)
         {
             return new UserModel { UserId = user.UserId, Name = user.Name, IsLecturer = user.IsLecturer };
         }

@@ -31,7 +31,7 @@ namespace DbConsole.Application.Models
 
         public Guid UserId { get; set; }
 
-        public UserGradeModel ConvertToApplicationModel(DbConsole.Infrastructure.Entities.UserGrade grade)
+        public static UserGradeModel ConvertToApplicationModel(DbConsole.Infrastructure.Entities.UserGrade grade)
         {
             return new UserGradeModel 
             { 

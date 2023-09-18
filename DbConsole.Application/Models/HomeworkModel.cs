@@ -18,7 +18,7 @@ namespace DbConsole.Application.Models
         /// </summary>
         public string? Description { get; set; }
 
-        public HomeworkModel ConvertToApplicationModel(DbConsole.Infrastructure.Entities.Homework homework)
+        public static HomeworkModel ConvertToApplicationModel(DbConsole.Infrastructure.Entities.Homework homework)
         {
             return new HomeworkModel { Id = homework.Id, Description = homework.Description, Title = homework.Title};
         }

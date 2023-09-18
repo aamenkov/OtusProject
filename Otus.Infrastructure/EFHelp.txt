@@ -2,3 +2,5 @@
   
   add-migration {MigrationName}
   update-database
+
+  Script-Migration -From 0 

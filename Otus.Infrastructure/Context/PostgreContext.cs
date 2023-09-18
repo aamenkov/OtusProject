@@ -21,9 +21,8 @@ namespace DbConsole.Infrastructure.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-            builder.InitialCatalog = "Otus.DbConsole";
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=OtusProject;Username=postgres;Password=postgres");
+            // Для отладки 
+            optionsBuilder.LogTo(Console.WriteLine);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

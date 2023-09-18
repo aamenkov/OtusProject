@@ -1,0 +1,61 @@
+﻿START TRANSACTION;
+
+CREATE TABLE "Homeworks" (
+    "Id" bigint GENERATED ALWAYS AS IDENTITY,
+    "Title" character varying NOT NULL,
+    "Description" character varying NULL,
+    CONSTRAINT "PK_Homeworks" PRIMARY KEY ("Id")
+);
+COMMENT ON TABLE "Homeworks" IS 'Домашние задания для пользователей';
+
+CREATE TABLE "Users" (
+    "UserId" uuid NOT NULL,
+    "Name" character varying NOT NULL,
+    "IsLecturer" boolean NOT NULL DEFAULT FALSE,
+    CONSTRAINT "PK_Users" PRIMARY KEY ("UserId")
+);
+COMMENT ON TABLE "Users" IS 'Пользователи';
+
+CREATE TABLE "UserGrades" (
+    "UserGradeId" bigint GENERATED ALWAYS AS IDENTITY,
+    "Quantity" integer NOT NULL,
+    "Comment" text NULL,
+    "IsPassed" boolean NOT NULL DEFAULT FALSE,
+    "DateTimeCreated" timestamp with time zone NOT NULL DEFAULT (CURRENT_TIMESTAMP),
+    "HomeworkId" bigint NOT NULL,
+    "UserId" uuid NOT NULL,
+    CONSTRAINT "PK_UserGrades" PRIMARY KEY ("UserGradeId"),
+    CONSTRAINT "FK_Grades" FOREIGN KEY ("UserId") REFERENCES "Users" ("UserId"),
+    CONSTRAINT "FK_Homeworks" FOREIGN KEY ("HomeworkId") REFERENCES "Homeworks" ("Id")
+);
+COMMENT ON TABLE "UserGrades" IS 'Оценки пользователей';
+
+CREATE INDEX "IX_UserGrades_HomeworkId" ON "UserGrades" ("HomeworkId");
+
+CREATE UNIQUE INDEX "Uniq_TypeGuid" ON "UserGrades" ("UserId", "HomeworkId");
+
+COMMIT;
+
+INSERT INTO public."Homeworks"(
+	"Title", "Description")
+	VALUES ( 'Новое задание2', 'Пустое описание3'),
+	       ( 'Новое задание1', 'Пустое описание2'),
+		   ( 'Новое задание2', 'Пустое описание3'),
+	       ( 'Новое задание1', 'Пустое описание2'),
+		   ( 'Новое задание1', 'Пустое описание2');
+
+INSERT INTO public."Users"(
+	"UserId", "Name", "IsLecturer")
+	VALUES ('83e9f236-05ca-4739-9edd-b4364c2eed08', 'Имя 1', false),
+		   ('6b3b3560-6065-41bb-9f84-92b696965437', 'Имя 2', false),
+		   ('dfe5bce0-fb09-4322-a212-2229660e6339', 'Имя 3', false),
+		   ('d28ca8ec-3a07-4e83-9917-60886cf1d752', 'Имя 4', false),
+	 	   ('5a024f3d-d9c6-42a7-b239-795575f918ce', 'Имя 5', false);
+
+INSERT INTO public."UserGrades"(
+	"Quantity", "Comment", "IsPassed", "HomeworkId", "UserId")
+	VALUES (100, 'test', true, 1, '83e9f236-05ca-4739-9edd-b4364c2eed08'),
+		   (100, 'test', true, 1, '6b3b3560-6065-41bb-9f84-92b696965437'),
+		   (100, 'test', true, 1, 'dfe5bce0-fb09-4322-a212-2229660e6339'),
+		   (100, 'test', true, 1, 'd28ca8ec-3a07-4e83-9917-60886cf1d752'),
+	       (100, 'test', true, 1, '5a024f3d-d9c6-42a7-b239-795575f918ce');

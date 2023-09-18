@@ -2,6 +2,9 @@
 
 namespace DbConsole.Application.Services
 {
+    /// <summary>
+    /// Сервис для конфигурации 
+    /// </summary>
     public class ConfigService
     {
         public string _secretString { get; }

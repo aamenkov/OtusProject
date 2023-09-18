@@ -9,8 +9,10 @@ namespace DbConsole.Application.Services
         private PostgreContext _dbContext;
         public InitDbService(ConfigService configService)
         {
-            var optionsPostgreSQL = new DbContextOptionsBuilder<PostgreContext>().UseNpgsql(configService._secretString).Options;
-            _dbContext = new PostgreContext(optionsPostgreSQL);
+            //var optionsPostgreSQL = new DbContextOptionsBuilder<PostgreContext>().UseNpgsql(configService._secretString).Options;
+          //  _dbContext = new PostgreContext(optionsPostgreSQL);
+
+            _dbContext = new PostgreContext();
             if (_dbContext.Database.EnsureCreated())
             {
                 InitDatabase();
