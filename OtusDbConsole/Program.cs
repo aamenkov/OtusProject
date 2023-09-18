@@ -47,9 +47,8 @@ internal class Program
         var initService = new InitDbService(_configService);
         _unitOfWork = new UnitOfWork(_configService);
 
-        // сделать методы для добавления записи в таблицу
-        // как правильно переименовывать проекты чтобы ничего не испортить?
-        // в случае с гитом
+        // TODO: сделать методы для добавления записи в таблицу
+        // TODO: задать вопрос. как правильно переименовывать проекты чтобы ничего не испортить?
 
         WriteHelpToConsole();
 
