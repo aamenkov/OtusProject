@@ -5,14 +5,19 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConsole", "OtusDbConsole\DbConsole.csproj", "{5B580DE9-2FFE-4B5E-AB49-86D602C35E97}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1", "1", "{37FDEB4D-AA5F-4B4F-9BF1-4B8905EF0608}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task-1", "Task-1", "{37FDEB4D-AA5F-4B4F-9BF1-4B8905EF0608}"
 	ProjectSection(SolutionItems) = preProject
-		Help.txt = Help.txt
+		Task-1.txt = Task-1.txt
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConsole.Infrastructure", "Otus.Infrastructure\DbConsole.Infrastructure.csproj", "{5C84D20E-38C8-4EC4-90A1-0938FF82FB57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbConsole.Application", "DbConsole.Application\DbConsole.Application.csproj", "{7EE37E1A-4E51-4F05-8AD1-FA2474E7503A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbConsole.Application", "DbConsole.Application\DbConsole.Application.csproj", "{7EE37E1A-4E51-4F05-8AD1-FA2474E7503A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task-2", "Task-2", "{4C1B6C03-6FBB-43A1-9E29-19B525AC6E02}"
+	ProjectSection(SolutionItems) = preProject
+		Task-2.txt = Task-2.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
