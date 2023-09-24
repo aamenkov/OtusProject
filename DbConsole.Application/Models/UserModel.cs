@@ -20,6 +20,15 @@ namespace DbConsole.Application.Models
             return new UserModel { UserId = user.UserId, Name = user.Name, IsLecturer = user.IsLecturer };
         }
 
+        public static DbConsole.Infrastructure.Entities.User ConvertToEntity(UserModel user)
+        {
+            return new DbConsole.Infrastructure.Entities.User { 
+                UserId = user.UserId, 
+                Name = user.Name, 
+                IsLecturer = user.IsLecturer 
+            };
+        }
+
         public override string ToString()
         {
             return $"Пользователь с Id = '{UserId}', Именем = '{Name}', Признак преподавателя = '{IsLecturer}'";

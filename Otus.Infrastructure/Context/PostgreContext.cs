@@ -22,7 +22,7 @@ namespace DbConsole.Infrastructure.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Для отладки 
-            optionsBuilder.LogTo(Console.WriteLine);
+            //optionsBuilder.LogTo(Console.WriteLine);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

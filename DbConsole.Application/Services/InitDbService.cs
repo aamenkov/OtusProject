@@ -4,6 +4,9 @@ using DbConsole.Infrastructure.Entities;
 
 namespace DbConsole.Application.Services
 {
+    /// <summary>
+    /// Инициализация работы с БД.
+    /// </summary>
     public class InitDbService
     {
         private PostgreContext _dbContext;

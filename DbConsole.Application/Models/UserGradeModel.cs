@@ -1,7 +1,4 @@
-﻿
-using System.Xml.Linq;
-
-namespace DbConsole.Application.Models
+﻿namespace DbConsole.Application.Models
 {
     public class UserGradeModel
     {
@@ -38,6 +35,20 @@ namespace DbConsole.Application.Models
                 UserGradeId = grade.UserGradeId, 
                 UserId = grade.UserId, 
                 Comment = grade.Comment, 
+                DateTimeCreated = grade.DateTimeCreated,
+                HomeworkId = grade.HomeworkId,
+                IsPassed = grade.IsPassed,
+                Quantity = grade.Quantity
+            };
+        }
+
+        public static DbConsole.Infrastructure.Entities.UserGrade ConvertToEntity(UserGradeModel grade)
+        {
+            return new DbConsole.Infrastructure.Entities.UserGrade
+            {
+                UserGradeId = grade.UserGradeId,
+                UserId = grade.UserId,
+                Comment = grade.Comment,
                 DateTimeCreated = grade.DateTimeCreated,
                 HomeworkId = grade.HomeworkId,
                 IsPassed = grade.IsPassed,

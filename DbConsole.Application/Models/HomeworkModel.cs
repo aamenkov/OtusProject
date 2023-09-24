@@ -1,8 +1,4 @@
-﻿
-using DbConsole.Infrastructure.Entities;
-using System.Xml.Linq;
-
-namespace DbConsole.Application.Models
+﻿namespace DbConsole.Application.Models
 {
     public class HomeworkModel
     {
@@ -21,6 +17,14 @@ namespace DbConsole.Application.Models
         public static HomeworkModel ConvertToApplicationModel(DbConsole.Infrastructure.Entities.Homework homework)
         {
             return new HomeworkModel { Id = homework.Id, Description = homework.Description, Title = homework.Title};
+        }
+
+        public static DbConsole.Infrastructure.Entities.Homework ConvertToEntity(HomeworkModel homework)
+        {
+            return new DbConsole.Infrastructure.Entities.Homework { 
+                Id = homework.Id, 
+                Description = homework.Description, 
+                Title = homework.Title };
         }
 
         public override string ToString()
