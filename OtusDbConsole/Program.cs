@@ -2,7 +2,6 @@
 using DbConsole.Application.Services;
 using DbConsole.Common;
 using Microsoft.Extensions.Configuration;
-using static DbConsole.Common.ConsoleService;
 
 internal class Program
 {
@@ -96,8 +95,8 @@ internal class Program
                     // В зависимости от номера таблицы добавляем необходимую сущность в БД
                     switch (tableNum)
                     {
-                        case (int)TableEnum.User:
-                            var user = GetUserFromConsole();
+                        case (int)ConsoleService.TableEnum.User:
+                            var user = _consoleService.GetUserFromConsole();
 
                             if (user == null)
                             {
@@ -107,8 +106,8 @@ internal class Program
                             Console.WriteLine("Пользователь успешно добавлен в БД");
                             break;
 
-                        case (int)TableEnum.Homework:
-                            var homework = GetHomeworkFromConsole();
+                        case (int)ConsoleService.TableEnum.Homework:
+                            var homework = _consoleService.GetHomeworkFromConsole();
 
                             if (homework == null)
                             {
@@ -118,8 +117,8 @@ internal class Program
                             Console.WriteLine("ДЗ успешно добавлено в БД");
                             break;
 
-                        case (int)TableEnum.UserGrades:
-                            var grade = GetUserGradeFromConsole();
+                        case (int)ConsoleService.TableEnum.UserGrades:
+                            var grade = _consoleService.GetUserGradeFromConsole();
 
                             if (grade == null)
                             {

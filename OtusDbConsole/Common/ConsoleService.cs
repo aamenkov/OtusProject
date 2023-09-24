@@ -59,7 +59,7 @@ namespace DbConsole.Common
         /// Заполнение сущности "Пользователь" из консоли
         /// </summary>
         /// <returns></returns>
-        public static UserModel GetUserFromConsole()
+        public UserModel GetUserFromConsole()
         {
             var user = new UserModel();
             Console.WriteLine("Введите имя пользователя: ");
@@ -87,7 +87,7 @@ namespace DbConsole.Common
         /// Заполнение сущности "ДЗ" из консоли
         /// </summary>
         /// <returns></returns>
-        public static HomeworkModel GetHomeworkFromConsole()
+        public HomeworkModel GetHomeworkFromConsole()
         {
             var homework = new HomeworkModel();
             Console.WriteLine("Введите заголовок: ");
@@ -115,7 +115,7 @@ namespace DbConsole.Common
         /// Заполнение сущности "оценка пользователя" из консоли
         /// </summary>
         /// <returns></returns>
-        public static UserGradeModel GetUserGradeFromConsole()
+        public UserGradeModel GetUserGradeFromConsole()
         {
             var grade = new UserGradeModel();
 
