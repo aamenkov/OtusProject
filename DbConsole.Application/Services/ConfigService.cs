@@ -14,8 +14,5 @@
         {
             _secretString = secretString;
         }
-
-
     }
-
 }
