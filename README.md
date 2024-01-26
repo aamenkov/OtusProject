@@ -35,4 +35,5 @@
 
 Перед тем как работать с проектом, необходимо прописать строку подключения к БД в launch profile - 'ConnectionStringPostgres'
 Создать БД можно с помощью 'Add-Megration {name}', опубликовать с помощью {update-database} в package manager condole
+
 ---
