@@ -2,12 +2,13 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Customer.WebApi.Models;
+using Customer.WebApi.Exceptions;
 
 namespace Customer.WebApi.Controllers
 {
-    public class CustomerController : Controller
+    public class CustomersController : Controller
     {
-        public CustomerController(CustomerService customerService)
+        public CustomersController(CustomerService customerService)
         {
             _customerService = customerService;
         }
@@ -46,6 +47,10 @@ namespace Customer.WebApi.Controllers
                 var customerId = await _customerService.AddCustomerAsync(customer);
                 return Ok(customerId);
             }
+            catch(CustomerAlreadyExistException ex)
+            {
+                return Conflict("Пользователь с таким ID - уже существует! Попробуйте еще раз.");
+            }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
@@ -58,7 +63,7 @@ namespace Customer.WebApi.Controllers
         /// </summary>
         /// <param name="customerId">Идентификатор покупателя</param>
         /// <returns></returns>
-        [HttpGet("[controller]/{customerId}")]
+        [HttpGet("[controller]/ById/{customerId}")]
         public async Task<ActionResult<CustomerModel>> GetCustomerByIdAsync(int customerId)
         {
             try
@@ -77,8 +82,7 @@ namespace Customer.WebApi.Controllers
         /// </summary>
         /// <param name="customerId">Идентификатор покупателя</param>
         /// <returns></returns>
-        [HttpDelete("[controller]/{customerId}")]
-        [Authorize]
+        [HttpDelete("[controller]/ById/{customerId}")]
         public async Task<ActionResult<bool>> DeleteCustomerByIdAsync(int customerId)
         {
             try
@@ -94,18 +98,16 @@ namespace Customer.WebApi.Controllers
         }
 
         /// <summary>
-        /// Удалить покупателя
+        /// Получить всех покупателей
         /// </summary>
-        /// <param name="customerId">Идентификатор покупателя</param>
         /// <returns></returns>
         [HttpGet("[controller]/GetAll")]
-        [Authorize]
-        public async Task<ActionResult<bool>> GetAllCustomersAsync(int customerId)
+        public async Task<ActionResult<bool>> GetAllCustomersAsync()
         {
             try
             {
-                await _customerService.GetAllCustomersAsync();
-                return Ok();
+                var list = await _customerService.GetAllCustomersAsync();
+                return Ok(list);
             }
             catch (Exception e)
             {

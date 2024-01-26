@@ -1,4 +1,5 @@
 ﻿using Customer.WebApi.DB;
+using Customer.WebApi.Exceptions;
 using Customer.WebApi.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,8 +30,12 @@ namespace Customer.WebApi.Services
         {
             try
             {
+                var res = await GetCustomerByIdAsync(customer.Id);
+                if (res != null) { throw new CustomerAlreadyExistException(); }
+
                 var entity = new CustomerEntity
                 {
+                    Id = customer.Id,
                     LastName = customer.LastName,
                     FirstName = customer.FirstName
                 };
@@ -75,7 +80,7 @@ namespace Customer.WebApi.Services
             try
             {
                 var list = await _dbContext.Customers.ToListAsync();
-                return list.Select(x => ConvertToServiceModel(x)).ToList(); ;
+                return list.Select(x => ConvertToServiceModel(x)).ToList(); 
             }
             catch (Exception ex)
             {

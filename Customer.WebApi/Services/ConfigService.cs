@@ -20,7 +20,11 @@ namespace Customer.WebApi.Services
         public ConfigService(IConfiguration configuration)
         {
             _configuration = configuration;
-            _postgreString = _configuration.GetSection("ConnectionStringPostgres").Value;
+            var connectionString = _configuration.GetSection("ConnectionStringPostgres").Value;
+
+            if (connectionString == null) { throw new Exception("Please, chech that u have connection string named 'ConnectionStringPostgres' in launch profile."); }
+
+            _postgreString = connectionString;
         }
     }
 }

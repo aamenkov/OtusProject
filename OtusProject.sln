@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task-2", "Task-2", "{4C1B6C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.WebApi", "Customer.WebApi\Customer.WebApi.csproj", "{A5F638C9-F684-4DC1-83DA-E84206BFC96B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cutomer.Console", "Cutomer.Console\Cutomer.Console.csproj", "{4EE01350-329B-4D5F-90B1-BC296948F3F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cutomer.Console", "Cutomer.Console\Cutomer.Console.csproj", "{4EE01350-329B-4D5F-90B1-BC296948F3F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
