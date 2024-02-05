@@ -33,11 +33,10 @@ internal class Program
         for (int i = 0; i < fileEntries.Length ; i++)
         {
             int index = i;
-            tasks[i] = Task.Run(() =>
+            tasks[i] = Task.Run(async () =>
             {
                 Console.WriteLine($"Поток {index} запущен!");
-                string content = File.ReadAllText(fileEntries[index]);
-                int spaceCount = content.Split(' ').Length - 1;
+                var spaceCount = await CountSpacesFromFileAsync(fileEntries[index]);
                 Console.WriteLine($"Поток {index} закончил работу! Файл: " + fileEntries[index] + ", пробелов: " + spaceCount);
             });
         }
@@ -61,16 +60,28 @@ internal class Program
         await Task.Run(() => 
         { 
             string[] fileEntries = Directory.GetFiles(folderPath);
-            Parallel.ForEach(fileEntries, (fileEntry, parallelLoopState, index) =>
+            Parallel.ForEach(fileEntries, async (fileEntry, parallelLoopState, index) =>
             {
                 Console.WriteLine($"Поток {index} запущен!");
-                string content = File.ReadAllText(fileEntry);
-                int spaceCount = content.Split(' ').Length - 1;
+                var spaceCount = await CountSpacesFromFileAsync(fileEntry);
                 Console.WriteLine($"Поток {index} закончил работу! Файл: " + fileEntry + ", пробелов: " + spaceCount);
             });
         }
         );
+
         stopwatch.Stop();
         Console.WriteLine("Время выполнения метода 'Способ с ParalelForEach': " + stopwatch.ElapsedMilliseconds + " миллисекунд");
+    }
+
+
+    /// <summary>
+    /// Подсчитываем количество пробелов в файле
+    /// </summary>
+    /// <param name="path"></param>
+    /// <returns></returns>
+    public static async Task<int> CountSpacesFromFileAsync(string path)
+    {
+        string content = await File.ReadAllTextAsync(path);
+        return content.Split(' ').Length - 1;
     }
 }
