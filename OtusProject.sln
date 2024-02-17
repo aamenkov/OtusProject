@@ -29,6 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task-3", "Task-3", "{18A78A
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task-4", "Task-4", "{8D6B8D08-A830-414F-BE0E-F0F7E7E85982}"
+	ProjectSection(SolutionItems) = preProject
+		Task-4.txt = Task-4.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuessGame.Console", "GuessGame.Console\GuessGame.Console.csproj", "{B4125D50-CB5F-4E99-927E-588EF05022C2}"
 EndProject
@@ -43,12 +46,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task-6", "Task-6", "{65D3EB
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task-7", "Task-7", "{54827076-777F-4131-9634-3BC0238EDC58}"
+	ProjectSection(SolutionItems) = preProject
+		Task-7.txt = Task-7.txt
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskFileReader.Console", "TaskFileReader.Console\TaskFileReader.Console.csproj", "{7281919F-A7F6-481E-AACA-6DE68A3FC619}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Task-8", "Task-8", "{0DB0A31D-D56C-4C8A-86D5-936EC992FD94}"
+	ProjectSection(SolutionItems) = preProject
+		Task-8.txt = Task-8.txt
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateAndEvents.Console", "DelegateAndEvents.Console\DelegateAndEvents.Console.csproj", "{9F898A76-9A3F-4427-A092-92D02EFDB5E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegateAndEvents.Console", "DelegateAndEvents.Console\DelegateAndEvents.Console.csproj", "{9F898A76-9A3F-4427-A092-92D02EFDB5E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrototypePattern.Console", "PrototypePattern.Console\PrototypePattern.Console.csproj", "{AAE83944-EB95-48E6-8818-145ABF3EA35E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelComputing.Console", "ParallelComputing.Console\ParallelComputing.Console.csproj", "{AC603323-0BBD-49D1-AC9D-B2C2A090D554}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reflection.Console", "Reflection.Console\Reflection.Console.csproj", "{B8651B1D-DA97-4510-824F-0C19F3AFC984}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +103,18 @@ Global
 		{9F898A76-9A3F-4427-A092-92D02EFDB5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F898A76-9A3F-4427-A092-92D02EFDB5E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F898A76-9A3F-4427-A092-92D02EFDB5E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAE83944-EB95-48E6-8818-145ABF3EA35E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAE83944-EB95-48E6-8818-145ABF3EA35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAE83944-EB95-48E6-8818-145ABF3EA35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAE83944-EB95-48E6-8818-145ABF3EA35E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC603323-0BBD-49D1-AC9D-B2C2A090D554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC603323-0BBD-49D1-AC9D-B2C2A090D554}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC603323-0BBD-49D1-AC9D-B2C2A090D554}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC603323-0BBD-49D1-AC9D-B2C2A090D554}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8651B1D-DA97-4510-824F-0C19F3AFC984}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8651B1D-DA97-4510-824F-0C19F3AFC984}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8651B1D-DA97-4510-824F-0C19F3AFC984}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8651B1D-DA97-4510-824F-0C19F3AFC984}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +128,9 @@ Global
 		{B4125D50-CB5F-4E99-927E-588EF05022C2} = {18A78A2D-8BEC-48D8-A77F-50D6355EFF8C}
 		{7281919F-A7F6-481E-AACA-6DE68A3FC619} = {65D3EB1A-62C8-4DC2-9E2F-7E147C0267DE}
 		{9F898A76-9A3F-4427-A092-92D02EFDB5E4} = {E23B1432-AE2D-4B0A-B598-4B9192A34D29}
+		{AAE83944-EB95-48E6-8818-145ABF3EA35E} = {0DB0A31D-D56C-4C8A-86D5-936EC992FD94}
+		{AC603323-0BBD-49D1-AC9D-B2C2A090D554} = {54827076-777F-4131-9634-3BC0238EDC58}
+		{B8651B1D-DA97-4510-824F-0C19F3AFC984} = {8D6B8D08-A830-414F-BE0E-F0F7E7E85982}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1CE5065B-79BD-4A68-8818-991220477188}
