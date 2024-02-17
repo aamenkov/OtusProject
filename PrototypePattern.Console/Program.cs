@@ -11,7 +11,7 @@ internal class Program
         // Клонирование через метод Clone() интерфейса ICloneable
         Person clonedPerson = (Person)myPerson.Clone();
 
-        // Клонирование через метод Clone() реализованного интерфейса IMyCloneable
+        // Клонирование через метод MyClone() реализованного интерфейса IMyCloneable
         Person myClonedPerson = myPerson.MyClone();
     }
 }
